@@ -3,7 +3,7 @@ Contributors: naa986
 Donate link: https://noorsplugin.com/
 Tags: adsense, google, google adsense, ads, ad manager
 Requires at least: 4.9
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP: 5.2.4
 Stable tag: 1.0.3
 License: GPLv2 or later
@@ -61,6 +61,26 @@ Yes.
 = Can I use this plugin if I already have some Google ads configured on my website? =
 
 Yes.
+
+= Does this plugin require Google AdSense sign in? =
+
+No.
+
+= Can this plugin be used on Google AdSense app? =
+
+No.
+
+= Can this plugin help with Google AdSense sign up? =
+
+No.
+
+= Can I check my Google AdSense payment with this plugin? =
+
+No.
+
+= Can I check my Google AdSense earnings with this plugin? =
+
+No.
 
 == Screenshots ==
 
