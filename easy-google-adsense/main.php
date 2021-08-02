@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Easy Google AdSense
-Version: 1.0.3
+Version: 1.0.4
 Plugin URI: https://noorsplugin.com/easy-google-adsense-plugin-wordpress/
 Author: naa986
 Author URI: https://noorsplugin.com/
@@ -17,7 +17,7 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
 
     class EASY_GOOGLE_ADSENSE {
 
-        var $plugin_version = '1.0.3';
+        var $plugin_version = '1.0.4';
 
         function __construct() {
             define('EASY_GOOGLE_ADSENSE_VERSION', $this->plugin_version);
@@ -121,7 +121,7 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
             if(isset($publisher_id) && !empty($publisher_id)){
                 $ouput = <<<EOT
                 <!-- auto ad code generated with Easy Google AdSense plugin v{$this->plugin_version} -->
-                <script data-ad-client="ca-{$publisher_id}" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>      
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-{$publisher_id}" crossorigin="anonymous"></script>      
                 <!-- / Easy Google AdSense plugin -->
 EOT;
 

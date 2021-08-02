@@ -5,7 +5,7 @@ Tags: adsense, google, google adsense, ads, ad manager
 Requires at least: 4.9
 Tested up to: 5.8
 Requires PHP: 5.2.4
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,6 +14,8 @@ Easily add Google AdSense ad code to your WordPress site. Automatically show Goo
 == Description ==
 
 [Easy Google AdSense](https://noorsplugin.com/easy-google-adsense-plugin-wordpress/) plugin makes Google AdSense monetization easier for WordPress. With this plugin, there is no need to manually add AdSense ads/code to different parts of your website. You just enter your Google AdSense Publisher ID in the settings and Google will automatically start showing ads at optimal times when they are likely to perform well for your website and provide a good experience for your users.
+
+https://www.youtube.com/watch?v=C39cZGX-mrk&rel=0
 
 === What is Google AdSense Auto Ads? === 
 
@@ -25,13 +27,41 @@ Auto Ads is an improved monetization method in Google AdSense. It uses machine l
 * Let Google handle ad placement and comply with terms and conditions easily
 * Increase revenue by showing ads when they will perform well
 * Automatically show Text & display ads, In-feed ads, In-article ads, Matched content, Anchor ads and Vignette ads at optimal times
-* Let Google understand the user and show ads at various places on your website 
-* There is no conflict since it takes into consideration any ad code that you have already placed on your website
-* It works with page-level ads since page-level ads have been migrated into auto ads
+* Let Google understand the user and show ads at various places on your website
+* Optimize your existing ad units
+* Automatically trigger optimization features to improve the performance of the ads 
+* Control the number of ads you show on your pages
+* Exclude specific pages on your site from showing Auto ads
+* Show a GDPR consent message to your users so they can consent to see personalized ads
+* Show a CCPA privacy message to your users for the California Consumer Privacy Act (CCPA)
+
+=== Supported Ad Formats ===
+
+**In-page ads**
+
+Ads that appear within the main body of content on your pages.
+
+**Matched content**
+
+Content promotion tool that can increase revenue and engagement.
+
+Ads that appear within the main body of content on your pages.
+
+**Anchor ads**
+
+Ads that stick to the edge of the user's screen and are easily dismissible.
+
+Ads that appear within the main body of content on your pages.
+
+**Vignette ads**
+
+Full screen ads that appear between page loads.
+
+**Wide screen ads**
+
+Ads that appear on screens wider than 1000px, like desktop (support Anchor and Vignette ads).
 
 === How to Use Google AdSense Auto Ads ===
-
-https://www.youtube.com/watch?v=C39cZGX-mrk&rel=0
 
 1. Install and Activate the *Easy Google AdSense* plugin
 1. Login to Google AdSense account
@@ -93,14 +123,14 @@ none
 
 == Changelog ==
 
-= 1.0.3 =
+= 1.0.4 =
+* Updated the ad code that allows AdSense to trigger optimization features earlier to improve the performance of the ads.
 
+= 1.0.3 =
 * Updated the ad code to use the latest AdSense API
 
 = 1.0.2 =
-
 * Easy Google AdSense now trims the value entered in the settings
 
 = 1.0.1 =
-
 * First commit
