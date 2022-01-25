@@ -3,7 +3,7 @@ Contributors: naa986
 Donate link: https://noorsplugin.com/
 Tags: adsense, google, google adsense, ads, ad manager
 Requires at least: 4.9
-Tested up to: 5.8
+Tested up to: 5.9
 Requires PHP: 5.2.4
 Stable tag: 1.0.4
 License: GPLv2 or later
