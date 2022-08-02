@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Easy Google AdSense
-Version: 1.0.5
+Version: 1.0.6
 Plugin URI: https://noorsplugin.com/easy-google-adsense-plugin-wordpress/
 Author: naa986
 Author URI: https://noorsplugin.com/
@@ -17,22 +17,34 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
 
     class EASY_GOOGLE_ADSENSE {
 
-        var $plugin_version = '1.0.5';
-
+        var $plugin_version = '1.0.6';
+        var $plugin_url;
+        var $plugin_path;
         function __construct() {
             define('EASY_GOOGLE_ADSENSE_VERSION', $this->plugin_version);
+            define('EASY_GOOGLE_ADSENSE_SITE_URL', site_url());
+            define('EASY_GOOGLE_ADSENSE_URL', $this->plugin_url());
+            define('EASY_GOOGLE_ADSENSE_PATH', $this->plugin_path());
             $this->plugin_includes();
         }
 
         function plugin_includes() {
             if (is_admin()) {
                 add_filter('plugin_action_links', array($this, 'plugin_action_links'), 10, 2);
+                include_once('addons/easy-google-adsense-addons.php');
             }
             add_action('plugins_loaded', array($this, 'plugins_loaded_handler'));
             add_action('admin_menu', array($this, 'add_options_menu'));
+            add_action('admin_enqueue_scripts', array($this, 'enqueue_admin_scripts'));
             add_action('wp_head', array($this, 'add_adsense_auto_ads_code'));
         }
-        
+        function enqueue_admin_scripts($hook) {
+            if('settings_page_easy-google-adsense-settings' != $hook) {
+                return;
+            }
+            wp_register_style('easy-google-adsense-addons-menu', EASY_GOOGLE_ADSENSE_URL.'/addons/easy-google-adsense-addons.css');
+            wp_enqueue_style('easy-google-adsense-addons-menu');
+        }
         function plugins_loaded_handler()
         {
             load_plugin_textdomain('easy-google-adsense', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/'); 
@@ -43,7 +55,12 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
                 return $this->plugin_url;
             return $this->plugin_url = plugins_url(basename(plugin_dir_path(__FILE__)), basename(__FILE__));
         }
-
+        
+        function plugin_path(){ 	
+            if ( $this->plugin_path ) return $this->plugin_path;		
+            return $this->plugin_path = untrailingslashit( plugin_dir_path( __FILE__ ) );
+        }
+    
         function plugin_action_links($links, $file) {
             if ($file == plugin_basename(dirname(__FILE__) . '/main.php')) {
                 $links[] = '<a href="options-general.php?page=easy-google-adsense-settings">'.__('Settings', 'easy-google-adsense').'</a>';
@@ -59,6 +76,7 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
         {    
             $plugin_tabs = array(
                 'easy-google-adsense-settings' => __('General', 'easy-google-adsense'),
+                'easy-google-adsense-settings&action=addons' => __('Add-ons', 'easy-google-adsense')
             );
             $url = "https://noorsplugin.com/easy-google-adsense-plugin-wordpress/";
             $link_text = sprintf(__('Please visit the <a target="_blank" href="%s">Easy Google AdSense</a> documentation page for setup instructions.', 'easy-google-adsense'), esc_url($url));          
@@ -102,8 +120,19 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
             );
             echo wp_kses($content, $allowed_html_tags);
 
-            
-            $this->general_settings();
+            if(!empty($action))
+            { 
+                switch($action)
+                {
+                    case 'addons':
+                        wp_login_form_display_addons();
+                        break;
+                }
+            }
+            else
+            {
+                $this->general_settings();
+            }
 
             echo '</div>'; 
         }
@@ -158,6 +187,11 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
                 return;
             }
             if(current_user_can('manage_options')){
+                return;
+            }
+            $show_auto_ads = true;
+            $show_auto_ads = apply_filters('easy_google_adsense_show_auto_ads', $show_auto_ads);
+            if(!$show_auto_ads){
                 return;
             }
             $ouput = <<<EOT

@@ -5,7 +5,7 @@ Tags: adsense, google, google adsense, ads, ad manager
 Requires at least: 4.9
 Tested up to: 6.0
 Requires PHP: 5.2.4
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,6 +16,10 @@ Easily add Google AdSense ad code to your WordPress site. Automatically show Goo
 [Easy Google AdSense](https://noorsplugin.com/easy-google-adsense-plugin-wordpress/) plugin makes Google AdSense monetization easier for WordPress. With this plugin, there is no need to manually add AdSense ads/code to different parts of your website. You just enter your Google AdSense Publisher ID in the settings and Google will automatically start showing ads at optimal times when they are likely to perform well for your website and provide a good experience for your users.
 
 https://www.youtube.com/watch?v=C39cZGX-mrk&rel=0
+
+=== Easy Google AdSense Add-ons ===
+
+* [No Ads for WP Users](https://noorsplugin.com/easy-google-adsense-plugin-wordpress/)
 
 === What is Google AdSense Auto Ads? === 
 
@@ -122,6 +126,9 @@ No.
 none
 
 == Changelog ==
+
+= 1.0.6 =
+* Added support for the No Ads for WP Users add-on.
 
 = 1.0.5 =
 * Ads are no longer shown when a user is logged in as an administrator.
