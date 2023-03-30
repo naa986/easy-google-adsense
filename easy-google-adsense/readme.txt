@@ -3,9 +3,9 @@ Contributors: naa986
 Donate link: https://noorsplugin.com/
 Tags: adsense, google, google adsense, ads, ad manager
 Requires at least: 4.9
-Tested up to: 6.1
+Tested up to: 6.2
 Requires PHP: 5.2.4
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -126,6 +126,9 @@ No.
 none
 
 == Changelog ==
+
+= 1.0.7 =
+* WordPress 6.2 compatibility update.
 
 = 1.0.6 =
 * Added support for the No Ads for WP Users add-on.

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Easy Google AdSense
-Version: 1.0.6
+Version: 1.0.7
 Plugin URI: https://noorsplugin.com/easy-google-adsense-plugin-wordpress/
 Author: naa986
 Author URI: https://noorsplugin.com/
@@ -17,7 +17,7 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
 
     class EASY_GOOGLE_ADSENSE {
 
-        var $plugin_version = '1.0.6';
+        var $plugin_version = '1.0.7';
         var $plugin_url;
         var $plugin_path;
         function __construct() {
@@ -125,7 +125,7 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
                 switch($action)
                 {
                     case 'addons':
-                        wp_login_form_display_addons();
+                        easy_google_adsense_display_addons();
                         break;
                 }
             }

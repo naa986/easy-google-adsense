@@ -1,6 +1,6 @@
 <?php
 
-function wp_login_form_display_addons()
+function easy_google_adsense_display_addons()
 {
     /*
     echo '<div class="wrap">';
