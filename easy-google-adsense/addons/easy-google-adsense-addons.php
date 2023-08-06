@@ -16,6 +16,14 @@ function easy_google_adsense_display_addons()
     );
     array_push($addons_data, $addon_1);
     
+    $addon_2 = array(
+        'name' => 'Bottom Anchor Ads',
+        'thumbnail' => EASY_GOOGLE_ADSENSE_URL.'/addons/images/ega-bottom-anchor-ads.png',
+        'description' => 'Show anchor ads at the bottom of the screen',
+        'page_url' => 'https://noorsplugin.com/easy-google-adsense-plugin-wordpress/',
+    );
+    array_push($addons_data, $addon_2);
+    
     //Display the list
     foreach ($addons_data as $addon) {
         ?>

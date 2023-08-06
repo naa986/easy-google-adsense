@@ -3,9 +3,9 @@ Contributors: naa986
 Donate link: https://noorsplugin.com/
 Tags: adsense, google, google adsense, ads, ad manager
 Requires at least: 4.9
-Tested up to: 6.2
+Tested up to: 6.3
 Requires PHP: 5.2.4
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,6 +20,7 @@ https://www.youtube.com/watch?v=C39cZGX-mrk&rel=0
 === Easy Google AdSense Add-ons ===
 
 * [No Ads for WP Users](https://noorsplugin.com/easy-google-adsense-plugin-wordpress/)
+* [Bottom Anchor Ads](https://noorsplugin.com/easy-google-adsense-plugin-wordpress/)
 
 === What is Google AdSense Auto Ads? === 
 
@@ -30,7 +31,7 @@ Auto Ads is an improved monetization method in Google AdSense. It uses machine l
 * Ads are automatically optimized using machine learning
 * Let Google handle ad placement and comply with terms and conditions easily
 * Increase revenue by showing ads when they will perform well
-* Automatically show Text & display ads, In-feed ads, In-article ads, Matched content, Anchor ads and Vignette ads at optimal times
+* Automatically show Text & display ads, In-feed ads, In-article ads, Multiplex ads, Anchor ads and Vignette ads at optimal times
 * Let Google understand the user and show ads at various places on your website
 * Optimize your existing ad units
 * Automatically trigger optimization features to improve the performance of the ads 
@@ -38,32 +39,38 @@ Auto Ads is an improved monetization method in Google AdSense. It uses machine l
 * Exclude specific pages on your site from showing Auto ads
 * Show a GDPR consent message to your users so they can consent to see personalized ads
 * Show a CCPA privacy message to your users for the California Consumer Privacy Act (CCPA)
+* Show related search ads
+* Show anchor ads at the bottom of the user's screen
 
 === Supported Ad Formats ===
-
-**In-page ads**
-
-Ads that appear within the main body of content on your pages.
-
-**Matched content**
-
-Content promotion tool that can increase revenue and engagement.
-
-Ads that appear within the main body of content on your pages.
 
 **Anchor ads**
 
 Ads that stick to the edge of the user's screen and are easily dismissible.
 
-Ads that appear within the main body of content on your pages.
-
 **Vignette ads**
 
 Full screen ads that appear between page loads.
 
+**Side rail ads**
+
+Ads that stick to the left and right sides of your pages.
+
 **Wide screen ads**
 
 Ads that appear on screens wider than 1000px, like desktop (support Anchor and Vignette ads).
+
+**Banner ads**
+
+Banner ads are in-page ads that are placed within areas of a page.
+
+**Multiplex ads**
+
+Multiplex ads are a type of native ad format that appear in a grid.
+
+**Related search**
+
+These ads appear as search terms related to the content of a page.
 
 === How to Use Google AdSense Auto Ads ===
 
@@ -126,6 +133,9 @@ No.
 none
 
 == Changelog ==
+
+= 1.0.9 =
+* WordPress 6.3 compatibility update.
 
 = 1.0.8 =
 * Added an option to automatically generate an ads.txt file.
