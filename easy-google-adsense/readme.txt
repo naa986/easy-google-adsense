@@ -5,7 +5,7 @@ Tags: adsense, google, google adsense, ads, ad manager
 Requires at least: 4.9
 Tested up to: 6.3
 Requires PHP: 5.2.4
-Stable tag: 1.0.9
+Stable tag: 1.0.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,6 +41,7 @@ Auto Ads is an improved monetization method in Google AdSense. It uses machine l
 * Show a CCPA privacy message to your users for the California Consumer Privacy Act (CCPA)
 * Show related search ads
 * Show anchor ads at the bottom of the user's screen
+* Show AMP auto ads
 
 === Supported Ad Formats ===
 
@@ -133,6 +134,9 @@ No.
 none
 
 == Changelog ==
+
+= 1.0.10 =
+* Added support for AMP auto ads.
 
 = 1.0.9 =
 * WordPress 6.3 compatibility update.
