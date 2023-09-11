@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Easy Google AdSense
-Version: 1.0.10
+Version: 1.0.11
 Plugin URI: https://noorsplugin.com/easy-google-adsense-plugin-wordpress/
 Author: naa986
 Author URI: https://noorsplugin.com/
@@ -17,7 +17,7 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
 
     class EASY_GOOGLE_ADSENSE {
 
-        var $plugin_version = '1.0.10';
+        var $plugin_version = '1.0.11';
         var $plugin_url;
         var $plugin_path;
         function __construct() {
@@ -30,7 +30,6 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
 
         function plugin_includes() {
             if (is_admin()) {
-                add_filter('plugin_action_links', array($this, 'plugin_action_links'), 10, 2);
                 include_once('addons/easy-google-adsense-addons.php');
             }
             add_action('init', array($this, 'init_handler'));
@@ -49,6 +48,9 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
         }
         function plugins_loaded_handler()
         {
+            if(is_admin() && current_user_can('manage_options')){
+                add_filter('plugin_action_links', array($this, 'plugin_action_links'), 10, 2);
+            }
             load_plugin_textdomain('easy-google-adsense', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/'); 
         }
 
