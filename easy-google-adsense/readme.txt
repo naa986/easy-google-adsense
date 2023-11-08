@@ -1,9 +1,9 @@
 === Easy Google AdSense ===
 Contributors: naa986
 Donate link: https://noorsplugin.com/
-Tags: adsense, google, google adsense, ads, ad manager
+Tags: adsense, google adsense, ads, ads.txt
 Requires at least: 4.9
-Tested up to: 6.3
+Tested up to: 6.4
 Requires PHP: 5.2.4
 Stable tag: 1.0.11
 License: GPLv2 or later
@@ -26,22 +26,23 @@ https://www.youtube.com/watch?v=C39cZGX-mrk&rel=0
 
 Auto Ads is an improved monetization method in Google AdSense. It uses machine learning to make smart ad placement for your website. When this is enabled, Google will analyze your site and show ads only when it thinks they will perform well and provide a good user experience.
 
-=== Benefits of Google AdSense Auto Ads ===
+=== Benefits ===
 
-* Ads are automatically optimized using machine learning
-* Let Google handle ad placement and comply with terms and conditions easily
-* Increase revenue by showing ads when they will perform well
-* Automatically show Text & display ads, In-feed ads, In-article ads, Multiplex ads, Anchor ads and Vignette ads at optimal times
-* Let Google understand the user and show ads at various places on your website
-* Optimize your existing ad units
-* Automatically trigger optimization features to improve the performance of the ads 
-* Control the number of ads you show on your pages
+* Ads are automatically optimized by Google using machine learning
+* Google handles ad placement so it is easy to comply with ad policy or terms and conditions
+* No need for an ad management plugin
+* Google shows ads when they will perform well to increase revenue
+* Google automatically shows Text & display ads, In-feed ads, In-article ads, Multiplex ads, Side rail ads, Anchor ads, Vignette ads, Related search ads
+* Ads are shown at various places on your website
+* No need for an ad rotation plugin
+* Optimize your existing AdSense ad units
+* Control the number of ads you show on your pages from your Google AdSense account
 * Exclude specific pages on your site from showing Auto ads
+* No need for an ad insertion/injection plugin
 * Show a GDPR consent message to your users so they can consent to see personalized ads
-* Show a CCPA privacy message to your users for the California Consumer Privacy Act (CCPA)
-* Show related search ads
-* Show anchor ads at the bottom of the user's screen
-* Show AMP auto ads
+* Show a CCPA privacy message to your users for the California Consumer Privacy Act
+* Support AMP auto ads with the official AMP plugin for WordPress
+* Automatically create an ads.txt file for Google AdSense
 
 === Supported Ad Formats ===
 
@@ -105,10 +106,6 @@ Yes.
 Yes.
 
 = Does this plugin require Google AdSense sign in? =
-
-No.
-
-= Can this plugin be used on Google AdSense app? =
 
 No.
 
