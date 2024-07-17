@@ -3,11 +3,11 @@ Contributors: naa986
 Donate link: https://noorsplugin.com/
 Tags: adsense, google adsense, ads, ads.txt
 Requires at least: 4.9
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 5.2.4
 Stable tag: 1.0.11
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Easily add Google AdSense ad code to your WordPress site. Automatically show Google ads optimized for your site at optimal times and increase revenue.
 
