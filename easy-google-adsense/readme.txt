@@ -3,7 +3,7 @@ Contributors: naa986
 Donate link: https://noorsplugin.com/
 Tags: adsense, google adsense, ads, ads.txt
 Requires at least: 4.9
-Tested up to: 6.6
+Tested up to: 6.7
 Requires PHP: 5.2.4
 Stable tag: 1.0.11
 License: GPLv2 or later
