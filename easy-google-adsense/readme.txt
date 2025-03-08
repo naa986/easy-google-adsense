@@ -1,11 +1,11 @@
 === Easy Google AdSense ===
 Contributors: naa986
 Donate link: https://noorsplugin.com/
-Tags: adsense, google adsense, ads, ads.txt
+Tags: adsense, google adsense, ads, ads.txt, amp
 Requires at least: 4.9
 Tested up to: 6.7
 Requires PHP: 5.2.4
-Stable tag: 1.0.11
+Stable tag: 1.0.12
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,7 @@ Auto Ads is an improved monetization method in Google AdSense. It uses machine l
 * Show a CCPA privacy message to your users for the California Consumer Privacy Act
 * Support AMP auto ads with the official AMP plugin for WordPress
 * Automatically create an ads.txt file for Google AdSense
+* Optionally disable showing ads to administrators
 
 === Supported Ad Formats ===
 
@@ -131,6 +132,9 @@ No.
 none
 
 == Changelog ==
+
+= 1.0.12 =
+* Added an option to not show ads to logged-in administrators.
 
 = 1.0.11 =
 * Additional check for the settings link.

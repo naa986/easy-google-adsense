@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Easy Google AdSense
-Version: 1.0.11
+Version: 1.0.12
 Plugin URI: https://noorsplugin.com/easy-google-adsense-plugin-wordpress/
 Author: naa986
 Author URI: https://noorsplugin.com/
@@ -17,7 +17,7 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
 
     class EASY_GOOGLE_ADSENSE {
 
-        var $plugin_version = '1.0.11';
+        var $plugin_version = '1.0.12';
         var $plugin_url;
         var $plugin_path;
         function __construct() {
@@ -152,9 +152,11 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
                     $publisher_id = sanitize_text_field($_POST['ega_publisher_id']);
                 }
                 $generate_ads_txt = (isset($_POST['ega_generate_ads_txt']) && $_POST['ega_generate_ads_txt'] == '1') ? '1' : '';
+                $no_ads_for_admins = (isset($_POST['ega_no_ads_for_admins']) && $_POST['ega_no_ads_for_admins'] == '1') ? '1' : '';
                 $options = array();
                 $options['publisher_id'] = $publisher_id;
                 $options['generate_ads_txt'] = $generate_ads_txt;
+                $options['no_ads_for_admins'] = $no_ads_for_admins;
                 easy_google_adsense_update_option($options);
                 echo '<div id="message" class="updated fade"><p><strong>';
                 echo __('Settings Saved', 'easy-google-adsense').'!';
@@ -184,6 +186,14 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
                                         <?php _e('Check this option if you want to automatically generate an ads.txt file', 'easy-google-adsense');?></label>
                                 </fieldset></td>
                         </tr>
+                        
+                        <tr valign="top">
+                            <th scope="row"><?php _e('No Ads for Admins', 'easy-google-adsense');?></th>
+                            <td> <fieldset><legend class="screen-reader-text"><span>No Ads for Admins</span></legend><label for="ega_no_ads_for_admins">
+                                        <input name="ega_no_ads_for_admins" type="checkbox" id="ega_no_ads_for_admins" <?php if(isset($options['no_ads_for_admins']) && $options['no_ads_for_admins'] == '1') echo ' checked="checked"'; ?> value="1">
+                                        <?php _e('Check this option to not show ads to logged-in administrators', 'easy-google-adsense');?></label>
+                                </fieldset></td>
+                        </tr>                       
                         
                     </tbody>
 
@@ -220,6 +230,15 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
                 return;
             }
             $publisher_id = $options['publisher_id'];
+            if(isset($options['no_ads_for_admins']) && !empty($options['no_ads_for_admins'])){
+                if(is_user_logged_in()){
+                    $user = wp_get_current_user();
+                    $allowed_roles = array('administrator');
+                    if(array_intersect($allowed_roles, $user->roles)){
+                        return;
+                    }
+                }
+            }
             $show_auto_ads = true;
             $show_auto_ads = apply_filters('easy_google_adsense_show_auto_ads', $show_auto_ads);
             if(!$show_auto_ads){
