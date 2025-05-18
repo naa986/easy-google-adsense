@@ -7,22 +7,30 @@ function easy_google_adsense_display_addons()
     echo '<h2>' .__('Easy Google AdSense Add-ons', 'easy-google-adsense') . '</h2>';
     */
     $addons_data = array();
-
+    
     $addon_1 = array(
+        'name' => 'Exclude Pages',
+        'thumbnail' => EASY_GOOGLE_ADSENSE_URL.'/addons/images/ega-exclude-pages.png',
+        'description' => 'Exclude specific posts/pages from displaying ads',
+        'page_url' => 'https://noorsplugin.com/easy-google-adsense-exclude-pages/',
+    );
+    array_push($addons_data, $addon_1);
+    
+    $addon_2 = array(
         'name' => 'No Ads for WP Users',
         'thumbnail' => EASY_GOOGLE_ADSENSE_URL.'/addons/images/ega-no-ads-wp-users.png',
         'description' => 'Disable auto ads for logged-in WordPress users',
         'page_url' => 'https://noorsplugin.com/easy-google-adsense-plugin-wordpress/',
     );
-    array_push($addons_data, $addon_1);
+    array_push($addons_data, $addon_2);
     
-    $addon_2 = array(
+    $addon_3 = array(
         'name' => 'Bottom Anchor Ads',
         'thumbnail' => EASY_GOOGLE_ADSENSE_URL.'/addons/images/ega-bottom-anchor-ads.png',
         'description' => 'Show anchor ads at the bottom of the screen',
         'page_url' => 'https://noorsplugin.com/easy-google-adsense-plugin-wordpress/',
     );
-    array_push($addons_data, $addon_2);
+    array_push($addons_data, $addon_3);
     
     //Display the list
     foreach ($addons_data as $addon) {

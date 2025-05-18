@@ -5,7 +5,7 @@ Tags: adsense, google adsense, ads, ads.txt, amp
 Requires at least: 4.9
 Tested up to: 6.8
 Requires PHP: 5.2.4
-Stable tag: 1.0.12
+Stable tag: 1.0.13
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,7 @@ https://www.youtube.com/watch?v=C39cZGX-mrk&rel=0
 
 === Easy Google AdSense Add-ons ===
 
+* [Exclude Pages](https://noorsplugin.com/easy-google-adsense-exclude-pages/)
 * [No Ads for WP Users](https://noorsplugin.com/easy-google-adsense-plugin-wordpress/)
 * [Bottom Anchor Ads](https://noorsplugin.com/easy-google-adsense-plugin-wordpress/)
 
@@ -132,6 +133,9 @@ No.
 none
 
 == Changelog ==
+
+= 1.0.13 =
+* Added support for exclude pages add-on.
 
 = 1.0.12 =
 * Added an option to not show ads to logged-in administrators.

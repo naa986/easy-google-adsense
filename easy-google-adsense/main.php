@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Easy Google AdSense
-Version: 1.0.12
+Version: 1.0.13
 Plugin URI: https://noorsplugin.com/easy-google-adsense-plugin-wordpress/
 Author: naa986
 Author URI: https://noorsplugin.com/
@@ -17,7 +17,7 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
 
     class EASY_GOOGLE_ADSENSE {
 
-        var $plugin_version = '1.0.12';
+        var $plugin_version = '1.0.13';
         var $plugin_url;
         var $plugin_path;
         function __construct() {
@@ -55,13 +55,16 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
         }
 
         function plugin_url() {
-            if ($this->plugin_url)
+            if ($this->plugin_url){
                 return $this->plugin_url;
+            }
             return $this->plugin_url = plugins_url(basename(plugin_dir_path(__FILE__)), basename(__FILE__));
         }
         
         function plugin_path(){ 	
-            if ( $this->plugin_path ) return $this->plugin_path;		
+            if($this->plugin_path){
+                return $this->plugin_path;
+            }
             return $this->plugin_path = untrailingslashit( plugin_dir_path( __FILE__ ) );
         }
     
@@ -157,6 +160,8 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
                 $options['publisher_id'] = $publisher_id;
                 $options['generate_ads_txt'] = $generate_ads_txt;
                 $options['no_ads_for_admins'] = $no_ads_for_admins;
+                $post = $_POST;
+                do_action('easy_google_adsense_general_settings_submitted', $post);
                 easy_google_adsense_update_option($options);
                 echo '<div id="message" class="updated fade"><p><strong>';
                 echo __('Settings Saved', 'easy-google-adsense').'!';
@@ -195,6 +200,13 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
                                 </fieldset></td>
                         </tr>                       
                         
+                        <?php
+                        $settings_fields = '';
+                        $settings_fields = apply_filters('easy_google_adsense_general_settings_fields', $settings_fields);
+                        if(!empty($settings_fields)){
+                            echo $settings_fields;
+                        }
+                        ?>
                     </tbody>
 
                 </table>
@@ -244,6 +256,13 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
             if(!$show_auto_ads){
                 return;
             }
+            //
+            $is_page_excluded = false;
+            $is_page_excluded = apply_filters('easy_google_adsense_is_page_excluded', $is_page_excluded);
+            if($is_page_excluded){
+                return;
+            }
+            //
             $custom_atts = '';
             $bottom_anchor_ads = '';
             $bottom_anchor_ads = apply_filters('easy_google_adsense_bottom_anchor_ads', $bottom_anchor_ads);
@@ -270,6 +289,13 @@ if (!class_exists('EASY_GOOGLE_ADSENSE')) {
             if(!$show_auto_ads){
                 return;
             }
+            //
+            $is_page_excluded = false;
+            $is_page_excluded = apply_filters('easy_google_adsense_is_page_excluded', $is_page_excluded);
+            if($is_page_excluded){
+                return;
+            }
+            //
             $custom_atts = '';
             $bottom_anchor_ads = '';
             $bottom_anchor_ads = apply_filters('easy_google_adsense_bottom_anchor_ads', $bottom_anchor_ads);
