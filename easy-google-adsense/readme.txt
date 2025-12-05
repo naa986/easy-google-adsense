@@ -3,7 +3,7 @@ Contributors: naa986
 Donate link: https://noorsplugin.com/
 Tags: adsense, google adsense, ads, ads.txt, amp
 Requires at least: 4.9
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 5.2.4
 Stable tag: 1.0.13
 License: GPLv2 or later
